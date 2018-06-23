@@ -18,8 +18,7 @@ import org.springframework.web.servlet.view.AbstractView;
 @Component("streamView")
 public class StreamView extends AbstractView{
 	private static final Logger logger = LoggerFactory.getLogger(StreamView.class);
-	//@Value("#{dir['movieDir']}") private String movieDir;
-	
+	private String movieDir = "movies";
 	@Override
 	protected void renderMergedOutputModel(Map<String,Object> map, HttpServletRequest request
 			, HttpServletResponse response) throws Exception{

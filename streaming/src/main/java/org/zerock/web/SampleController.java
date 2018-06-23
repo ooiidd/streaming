@@ -43,6 +43,6 @@ public class SampleController {
 	@RequestMapping("/")
 	public String dab() {
 		logger.info("dob called....");
-		return "home";
+		return "StreamView";
 	}
 }
