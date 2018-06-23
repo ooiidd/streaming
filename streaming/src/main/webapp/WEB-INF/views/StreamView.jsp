@@ -9,11 +9,14 @@
 <title>test</title>
 </head>
 <body>
-	<video width="640" height="344" controls autoplay="autoplay">
+
+	<video height="322" width="644" controls autoplay="autoplay">
 	 <source src="${ROOT}/movie/sample.mp4" type="video/mp4">
+	</video>
 	
-	Your
+	<video  controls autoplay="autoplay">
+	 <source src="${ROOT}/movie/sample2.mp4" type="video/mp4">
 	</video>
 	<p>${ROOT }</p>
 </body>
-</html>
+</html>h
