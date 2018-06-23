@@ -9,11 +9,11 @@
 <title>test</title>
 </head>
 <body>
-	<!--<video width="640" height="344" controls autoplay="autoplay">
+	<video width="640" height="344" controls autoplay="autoplay">
 	 <source src="${ROOT}/movie/sample.mp4" type="video/mp4">
 	
 	Your
-	</video>-->
+	</video>
 	<p>${ROOT }</p>
 </body>
 </html>

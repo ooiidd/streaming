@@ -11,19 +11,22 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.view.AbstractView;
 
-@Component("streamView")
+//@Component("streamView")
 public class StreamView extends AbstractView{
 	private static final Logger logger = LoggerFactory.getLogger(StreamView.class);
-	private String movieDir = "movies";
+	private String movieDir = "movie";
+	
 	@Override
+	@RequestMapping(value="/movie/sample.mp4",method=RequestMethod.GET)
 	protected void renderMergedOutputModel(Map<String,Object> map, HttpServletRequest request
 			, HttpServletResponse response) throws Exception{
 		String movieName = (String)map.get("movieName");
 		
+		System.out.println("test : "+movieName);
 		RandomAccessFile randomFile = new RandomAccessFile(new File(movieDir, movieName),"r");
 		
 		long rangeStart = 0;
