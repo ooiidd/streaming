@@ -9,15 +9,16 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.view.AbstractView;
 
-@Component("StreamView")
+@Component("streamView")
 public class StreamView extends AbstractView{
-	private static final org.slf4j.Logger logger = LoggerFactory.getLogger(StreamView.class);
-	@Value("#{dir['movieDir']}") private String movieDir;
+	private static final Logger logger = LoggerFactory.getLogger(StreamView.class);
+	//@Value("#{dir['movieDir']}") private String movieDir;
 	
 	@Override
 	protected void renderMergedOutputModel(Map<String,Object> map, HttpServletRequest request

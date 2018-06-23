@@ -40,8 +40,9 @@ public class SampleController {
 		}*/
 		return "home";
 	}
-	@RequestMapping("dob")
-	public void dab() {
+	@RequestMapping("/")
+	public String dab() {
 		logger.info("dob called....");
+		return "home";
 	}
 }
