@@ -14,18 +14,32 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class SampleController {
 	private static final Logger logger = LoggerFactory.getLogger(SampleController.class);
 	@RequestMapping(value="data", method = RequestMethod.POST)
-	public ResponseEntity<String> getData(@RequestBody String data,Model model) {
-		
-		ResponseEntity<String> entity = null;
-		try {
+	public String getData(@RequestBody String data,Model model) {
+
+		logger.info("post called....");
+		//ResponseEntity<String> entity = null;
+		/*try {
 			entity = new ResponseEntity<String>(data,HttpStatus.OK);
 		}catch(Exception e) {
 			e.printStackTrace();
 			entity = new ResponseEntity<String>(e.getMessage(),HttpStatus.BAD_REQUEST);
-		}
-		return entity;
+		}*/
+		model.addAttribute("serverTime", data );
+		return "home";
 	}
-	
+	@RequestMapping(value="test", method = RequestMethod.GET)
+	public String getData(Model model) {
+
+		logger.info("post called....");
+		//ResponseEntity<String> entity = null;
+		/*try {
+			entity = new ResponseEntity<String>(data,HttpStatus.OK);
+		}catch(Exception e) {
+			e.printStackTrace();
+			entity = new ResponseEntity<String>(e.getMessage(),HttpStatus.BAD_REQUEST);
+		}*/
+		return "home";
+	}
 	@RequestMapping("dob")
 	public void dab() {
 		logger.info("dob called....");
