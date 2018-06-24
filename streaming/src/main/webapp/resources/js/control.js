@@ -1,6 +1,7 @@
 var img_L = 10;
 var img_T = 20;
 var targetObj;
+var v2_id = document.getElementById("video2");
 
 function getLeft(o) {
 	return parseInt(o.style.left.replace('px', ''));
@@ -21,13 +22,15 @@ function moveDrag(e) {
 function startDrag(e, obj) {
 	targetObj = obj;
 	var e_obj = window.event ? window.event : e;
-	img_L = getLeft(obj) - e_obj.clientX;
-	img_T = getTop(obj) - e_obj.clientY;
+		img_L = getLeft(obj) - e_obj.clientX;
+		img_T = getTop(obj) - e_obj.clientY;
 
-	document.onmousemove = moveDrag;
-	document.onmouseup = stopDrag;
-	if (e_obj.preventDefault)
-		e_obj.preventDefault();
+		document.onmousemove = moveDrag;
+		document.onmouseup = stopDrag;
+		if (e_obj.preventDefault)
+			e_obj.preventDefault();
+	
+	
 }
 
 function stopDrag() {
